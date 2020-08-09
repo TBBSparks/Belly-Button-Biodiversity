@@ -4,22 +4,18 @@ function getPlot(id) {
         
         
         //Having trouble with the washing frequency for now but looking for solutions
-        var wfreq = data.metadata.map(d => d.wfreq)
-        //var wfreq = data.metadata.filter(d )
-        //console.log(`Washing Freq: ${wfreq}`)
-        //console.log(wfreq)
+        var wfreq = data.metadata.filter(s => s.id.toString() === id)[0];
 
         // Sample by id
         var samples = data.samples.filter(s => s.id.toString() === id)[0];
         
-        //console.log(samples);
   
         // .slice 0 to 9 not after 10 and reversing for bar chart
         var samplevalues = samples.sample_values.slice(0, 10).reverse();
   
         // .slice 0 to 9 plus reverse to get top10 
-        var OTU_top = (samples.otu_ids.slice(0, 10)).reverse();
-        var OTU_id = OTU_top.map(d => "OTU " + d)
+        var Top_OTU = (samples.otu_ids.slice(0, 10)).reverse();
+        var otuID = Top_OTU.map(d => "OTU " + d)
   
         // get the top 10 labels for the plot
         var labels = samples.otu_labels.slice(0, 10);
@@ -27,7 +23,7 @@ function getPlot(id) {
         // Bar plot we want is horizontal so including "orientation: "h"
         var trace = {
             x: samplevalues,
-            y: OTU_id,
+            y: otuID,
             text: labels,
             marker: {
               color: 'rgb(69,69,69)'},
@@ -39,7 +35,7 @@ function getPlot(id) {
   
         // Layout with title and padding for viewability (is that a word?)
         var LayoutForBar = {
-            title: "Top 10 OTU",
+            title: "OTU top 10",
             yaxis:{
                 tickmode:"linear",
             },
@@ -51,10 +47,10 @@ function getPlot(id) {
             }
         };
 
-        // Plot the bar plot
+        // Plot the bar plot (not a bar plot of bars)
         Plotly.newPlot("bar", data, LayoutForBar);
   
-        // Bubble plot we are coloring based on the otu_id which is bacteria
+        // Bubble plot we are coloring based on the otu_id which is bacteria, which is gross
         var trace1 = {
             x: samples.otu_ids,
             y: samples.sample_values,
@@ -80,11 +76,11 @@ function getPlot(id) {
         Plotly.newPlot("bubble", data1, LayoutForBubble); 
   
         // My gauge chart is not quite currently working (variable issues)
-  
+        
         var trace2 = [
           {
           domain: { x: [0, 1], y: [0, 1] },
-          value: 6,
+          value: wfreq,
           title: { text: `Wash Freq` },
           type: "indicator",
           
@@ -108,6 +104,7 @@ function getPlot(id) {
           };
 
         // Plot out the gauge
+        console.log(wfreq)
         Plotly.newPlot("gauge", trace2, layout_g);
       });
   }  
