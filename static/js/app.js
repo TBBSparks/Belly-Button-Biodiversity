@@ -63,7 +63,7 @@ function getPlot(id) {
   
         };
   
-        // layout out for the bubble plot I'm not quite satisfied yet and plan to manipulate
+        // layout out for the bubble plot
         var LayoutForBubble = {
             xaxis:{title: "OTU ID (Bacteria)"},
             height: 1000,
