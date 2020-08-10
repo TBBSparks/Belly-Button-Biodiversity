@@ -2,8 +2,9 @@ function getPlot(id) {
     // Using D3 can pull json data
     d3.json("Data/samples.json").then((data)=> {
         
-        
-        //Credit to my friend "https://github.com/philstark" Potato for helping me understand this wfreq issue for the gauge Plotly plot. He taught me a great deal with this homework and is a wonderful person.
+        //Credit to my friend "https://github.com/philstark" aka "Potato" for helping me understand this wfreq issue for the gauge Plotly plot.
+        //He taught me a great deal with this homework and is a wonderful person.
+        //in the variable definition I was not initially putting the ".wfreq" on the end to do the read of it properly 
         var wfreq = data.metadata.filter(s => s.id.toString() === id)[0].wfreq;
 
         // Sample by id
@@ -47,10 +48,12 @@ function getPlot(id) {
             }
         };
 
-        // Plot the bar plot (not a bar plot of bars)
+        // Plot the bar plot (not a bar plot of bars, can't go there during COVID)
         Plotly.newPlot("bar", data, LayoutForBar);
   
         // Bubble plot we are coloring based on the otu_id which is bacteria, which is gross
+        // Bubble plotting for plotly visited https://plotly.com/python/bubble-charts/ for some help and sanity checks
+        
         var trace1 = {
             x: samples.otu_ids,
             y: samples.sample_values,
@@ -76,6 +79,8 @@ function getPlot(id) {
         Plotly.newPlot("bubble", data1, LayoutForBubble); 
   
         // Guage chart basic design. Played with colors a bit
+        // Plotly colours list found at https://community.plotly.com/t/plotly-colours-list/11730 was helpful to play with the look
+        // Plotly gauge code researched here and manipulated https://plotly.com/python/gauge-charts/
         
         var trace2 = [
           {
@@ -126,7 +131,7 @@ function getInfo(id) {
 
         console.log(result)
 
-        //#sample-metadata from index.html (showing relationship here)
+        //#sample-metadata (showing relationship for my own sanity)
         // <h3 class="panel-title">Demographic Info</h3>
           //</div>
           //<div id="sample-metadata" class="panel-body"></div>
@@ -150,9 +155,9 @@ function optionChanged(id) {
     getInfo(id);
 }
 
-// Function for initial data
+// Function for init data
 function init() {
-    // #selectDataset from index.html id="selDataset"
+    // #selectDataset (again for my own sanity)
     // <h5>Test Subject ID No.:</h5>
     // <select id="selDataset" onchange="optionChanged(this.value)"></select>
     var dropdown = d3.select("#selDataset");
