@@ -89,8 +89,8 @@ function getPlot(id) {
 
                    steps: [
                     { range: [0, 2], color: "lightgray" },
-                    { range: [2, 4], color: "gray" },
-                    { range: [4, 6], color: "darkgray" },
+                    { range: [2, 4], color: "darkgray" },
+                    { range: [4, 6], color: "gray" },
                     { range: [6, 8], color: "lightslategray" },
                     { range: [8, 9], color: "darkslategray" },
                   ]}
