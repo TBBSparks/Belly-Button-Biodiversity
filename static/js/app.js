@@ -136,11 +136,10 @@ function getInfo(id) {
           //</div>
           //<div id="sample-metadata" class="panel-body"></div>
         //</div>
+        //I found this helpful in understanding this concept in d3.select https://bost.ocks.org/mike/selection/
         var demographicInfo = d3.select("#sample-metadata");
-
-        //console.log(demographicInfo)
         
-        // Clear the panel out
+        // Clear
         demographicInfo.html("");
 
         // Data for the ID
