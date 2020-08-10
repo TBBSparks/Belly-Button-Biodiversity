@@ -20,7 +20,7 @@ function getPlot(id) {
         // get the top 10 labels for the plot
         var labels = samples.otu_labels.slice(0, 10);
   
-        // Bar plot we want is horizontal so including "orientation: "h". Not a bar plot of bars ;-)
+        // Bar plot we want is horizontal so including "orientation: "h". 
         var trace = {
             x: samplevalues,
             y: otuID,
