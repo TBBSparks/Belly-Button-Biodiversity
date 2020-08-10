@@ -4,10 +4,10 @@
 
 An interactive dashboard to explore Belly Button Biodiversity dataset, which catalogs the microbes that colonize human navels.  
 
-The dataset reveals that a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
+The dataset provided in .json format shows a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
 
-The data was prepared and sorted on the backend using the Python libraries SQLAlchemy and flask. On the frontend side, plotly.js was used to create all the visualizations in JavaScript. The dashboard has been deployed using Heroku and can be found here.  Data Analysis to Build an Interactive Dashboard Exploring the Belly Button Biodiversity DataSet Using Plotly.js, Flask
+The data was prepared and already pre sorted when provided. plotly.js was used to create all the visualizations (graphs) in JavaScript. The dashboard has been deployed using github pages.  Data Analysis to Build an Interactive Dashboard Exploring the Belly Button Biodiversity DataSet Using Plotly.js
 
 Play with it yourself at: 
 https://tbbsparks.github.io/Belly-Button-Biodiversity/
