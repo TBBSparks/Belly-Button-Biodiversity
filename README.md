@@ -10,7 +10,7 @@ The dataset reveals that a small handful of microbial species (also called opera
 The data was prepared and sorted on the backend using the Python libraries SQLAlchemy and flask. On the frontend side, plotly.js was used to create all the visualizations in JavaScript. The dashboard has been deployed using Heroku and can be found here.  Data Analysis to Build an Interactive Dashboard Exploring the Belly Button Biodiversity DataSet Using Plotly.js, Flask
 
 Play with it yourself at: 
-https://github.com/TBBSparks/Belly-Button-Biodiversity
+https://tbbsparks.github.io/Belly-Button-Biodiversity/
 
 
 *About the Data
