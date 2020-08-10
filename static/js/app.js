@@ -43,7 +43,7 @@ function getPlot(id) {
                 l: 100,
                 r: 50,
                 t: 100,
-                b: 10
+                b: 50
             }
         };
 
