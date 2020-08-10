@@ -20,7 +20,7 @@ function getPlot(id) {
         // get the top 10 labels for the plot
         var labels = samples.otu_labels.slice(0, 10);
   
-        // Bar plot we want is horizontal so including "orientation: "h"
+        // Bar plot we want is horizontal so including "orientation: "h". Not a bar plot of bars ;-)
         var trace = {
             x: samplevalues,
             y: otuID,
@@ -41,9 +41,9 @@ function getPlot(id) {
             },
             margin: {
                 l: 100,
-                r: 100,
+                r: 50,
                 t: 100,
-                b: 30
+                b: 10
             }
         };
 
@@ -75,7 +75,7 @@ function getPlot(id) {
         // Plot out the bubble
         Plotly.newPlot("bubble", data1, LayoutForBubble); 
   
-        // My gauge chart is not quite currently working (variable issues)
+        // Guage chart basic design. Played with colors a bit
         
         var trace2 = [
           {
@@ -134,7 +134,7 @@ function getInfo(id) {
         // Clear the panel out
         demographicInfo.html("");
 
-        // Getting the data for the ID and append
+        // Data for the ID
         Object.entries(result).forEach((key) => {   
                 demographicInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");    
         });
