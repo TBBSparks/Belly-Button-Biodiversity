@@ -3,7 +3,7 @@ function getPlot(id) {
     d3.json("Data/samples.json").then((data)=> {
         
         
-        //Credit to my friend "https://github.com/philstark" Potato for helping me understand this wfreq issue for the gauge issue.
+        //Credit to my friend "https://github.com/philstark" Potato for helping me understand this wfreq issue for the gauge Plotly plot. He taught me a great deal with this homework and is a wonderful person.
         var wfreq = data.metadata.filter(s => s.id.toString() === id)[0].wfreq;
 
         // Sample by id
