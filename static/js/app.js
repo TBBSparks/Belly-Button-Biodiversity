@@ -3,7 +3,7 @@ function getPlot(id) {
     d3.json("Data/samples.json").then((data)=> {
         
         
-        //Having trouble with the washing frequency for now but looking for solutions
+        //Credit to my friend "https://github.com/philstark" Potato for helping me understand this wfreq issue for the gauge issue.
         var wfreq = data.metadata.filter(s => s.id.toString() === id)[0].wfreq;
 
         // Sample by id
