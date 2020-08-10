@@ -7,7 +7,7 @@ An interactive dashboard to explore Belly Button Biodiversity dataset, which cat
 The dataset provided in .json format shows a small handful of microbial species (also called operational taxonomic units, or OTUs, in the study) were present in more than 70% of people, while the rest were relatively rare.
 
 
-The data was prepared and already pre sorted when provided. plotly.js was used to create all the visualizations (graphs) in JavaScript. The dashboard has been deployed using github pages.  Data Analysis to Build an Interactive Dashboard Exploring the Belly Button Biodiversity DataSet Using Plotly.js
+The data was prepared and already pre sorted when provided. plotly.js was used to create all the visualizations (graphs) in JavaScript. The dashboard has been deployed using github pages.  Data Analysis to Build an Interactive Dashboard Exploring the Belly Button Biodiversity DataSet Using Plotly for javascript.
 
 Play with it yourself at: 
 https://tbbsparks.github.io/Belly-Button-Biodiversity/
