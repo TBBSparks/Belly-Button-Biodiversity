@@ -4,7 +4,7 @@ function getPlot(id) {
         
         
         //Having trouble with the washing frequency for now but looking for solutions
-        var wfreq = data.metadata.filter(s => s.id.toString() === id)[0];
+        var wfreq = data.metadata.filter(s => s.id.toString() === id)[0].wfreq;
 
         // Sample by id
         var samples = data.samples.filter(s => s.id.toString() === id)[0];
